@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
-    color: palevioletred;
+    background-color: #08105b;
+    color: white;
     font-size: 1em;
-    margin: 1em;
+    margin: 0;
     padding: 0.25em 1em;
-    border: 2px solid palevioletred;
-    border-radius: 3px;
+    text-align: center;
 `;
 
 class header extends Component {

@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
 
-class Posts extends Component {
-    render() {
-        return (
-            <React.Fragment>
-                <div style={{ marginTop: '10rem', textAlign: 'center' }}>
-                    <h1>Posts is there</h1>
-                </div>
-            </React.Fragment>
-        );
-    }
-}
-
-export default Posts;
+client.query({
+    query: gql`
+        {
+            rates(currency: "USD") {
+                currency
+            }
+        }
+    `,
+});
