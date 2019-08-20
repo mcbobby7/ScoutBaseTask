@@ -8,10 +8,6 @@ const FooterWrapper = styled.div`
     margin: 0;
     padding-top: 15px;
     text-align: center;
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    right: 0;
     width: 100%;
     height: 50px;
     h1 {

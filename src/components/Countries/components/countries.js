@@ -27,7 +27,7 @@ const HeaderWrapper = styled.div`
     
 `;
 
-class Posts extends Component {
+class Countries extends Component {
     displayCountries(){
         var data = this.props.data;
         if(data.loading){
@@ -51,6 +51,7 @@ class Posts extends Component {
         }
     }
     render() {
+        console.log(this.props);
         return (
             <HeaderWrapper>
                 <ul>
@@ -61,6 +62,6 @@ class Posts extends Component {
     }
 }
 
-export default graphql(getCountries)(Posts);
+export default graphql(getCountries)(Countries);
 
 

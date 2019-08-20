@@ -8,7 +8,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 const apolloClient = new ApolloClient({
-    uri: 'https://countries.trevorblades.com',
+    uri: 'https://countries.trevorblades.com'
 });
 
 const { Content } = Layout;
@@ -22,8 +22,10 @@ const ResultWrapper = styled.div`
     margin: 0;
     text-align: center;
     width: 600px;
-    height: 550px;
+    height: 640px;
     border: 4px solid #08105b;
+    overflow-x: hidden; 
+    overflow-x: auto; 
 `;
 
 class App extends Component {

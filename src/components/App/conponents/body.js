@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import 'antd/dist/antd.css';
 import { Button } from 'antd';
+import {Link} from 'react-router-dom';
+import Modal from './modal';
 
 const BodyWrapper = styled.div`
     margin: 0;
@@ -61,13 +63,12 @@ class Body extends Component {
                         </li>
                     </ol>
                 </div>
-                <Button className="button" type="primary">
-                    Primary
-                </Button>
+                <Link to="/countries"><Button className="button" type="primary">
+                        Countriea
+                    </Button>
+                </Link>
                 <hr />
-                <Button className="button" type="primary">
-                    Primary
-                </Button>
+                <Modal />
             </BodyWrapper>
         );
     }
