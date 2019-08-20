@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Button } from 'antd';
+import {Link} from 'react-router-dom';
+import styled from 'styled-components';
 import { gql } from 'apollo-boost';
 import {graphql} from 'react-apollo';
 
@@ -7,13 +9,22 @@ const getCountries=gql`
     {
         countries{
             name
+            code
         }
     }
 `
+const ModalLayout = styled.div`
+`;
 
 class ModalButton extends React.Component {
-  state = { visible: false };
+  state = { visible: false, code: "", disabled: false };
 
+
+  getCode = (e) => {
+      this.setState({
+          code: e.target.value, disabled: true
+      });
+  }
   showModal = () => {
     this.setState({
       visible: true,
@@ -26,6 +37,7 @@ class ModalButton extends React.Component {
       visible: false,
     });
   };
+
 
   handleCancel = e => {
     console.log(e);
@@ -41,9 +53,7 @@ class ModalButton extends React.Component {
     }else{
         return data.countries.map(countrey =>{
             return(
-                <div>
-                    <h5>{countrey.name}</h5>
-                </div>
+                <option key={data.code} value="data.code">{countrey.name}</option>
             );
         })
     }
@@ -61,7 +71,16 @@ class ModalButton extends React.Component {
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-          {this.displayCountries()}
+            <ModalLayout>
+            <Link to="/country/CA">
+            <select name="code" onchange={this.getCode}>
+                <option disabled={this.state.disabled} defaultChecked></option>
+                {this.displayCountries()}
+             </select>
+             </Link>
+
+             
+          </ModalLayout>
         </Modal>
       </div>
     );

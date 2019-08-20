@@ -14,7 +14,7 @@ class ReactRouter extends React.Component {
                     <Route exact path="/" component={Home} />
                     <Route exact path="/posts" component={Posts} />
                     <Route exact path="/countries" component={Countries} />
-                    <Route exact path="/countrey" component={Countrey} />
+                    <Route exact path="/country/:code" component={Countrey} />
                 </App>
             </React.Fragment>
         );

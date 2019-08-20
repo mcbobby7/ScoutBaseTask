@@ -2,54 +2,37 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { gql } from 'apollo-boost';
 import {graphql} from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 import { Collapse, Icon } from 'antd';
 import 'antd/dist/antd.css';
 
 const { Panel } = Collapse;
 
-const getCountries=gql`
-    {
-        countries{
-            name
-            code
-          continent {
-            name
-          }
-          languages {
-            name
-            native
-          }
-        }
+const getCountries = gql`
+  query country($code: String!) {
+    country(code: $code) {
+      name
     }
-`
+  }
+`;
 
 const HeaderWrapper = styled.div`
     
 `;
 
 class Posts extends Component {
-    displayCountries(){
-        var data = this.props.data;
-        if(data.loading){
-            return(<div>loading</div>);
-        }else{
-            return data.countries.map(countrey =>{
-                return(
-                        <Collapse
-                            bordered={false}
-                            defaultActiveKey={['AD']}
-                            expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />}
-                        >
-                            <Panel header={countrey.name} key={countrey.code}>
-                            <h5>{countrey.languages.name}</h5><br />
-                            <h5>{countrey.languages.native}</h5><br />
-                            <h5>{countrey.continent.name}</h5><br />
-                            </Panel>
-                        </Collapse>
-                );
-            })
-        }
-    }
+ displayCountries({ code }) {
+        const { loading, error, data } = useQuery(getCountries, {
+          variables: { code },
+        });
+      
+        if (loading) return null;
+        if (error) return `Error! ${error}`;
+      
+        return (
+            <h1>{data.country.name}</h1>
+        );
+      }
     render() {
         return (
             <HeaderWrapper>

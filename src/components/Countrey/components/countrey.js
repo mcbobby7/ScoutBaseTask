@@ -9,15 +9,16 @@ const { Panel } = Collapse;
 
 const getCountries=gql`
     {
-        countries{
+        country(code: "CA"){
             name
             code
-          continent {
-            name
-          }
+          	emoji
           languages {
             name
             native
+          }
+          continent {
+            name
           }
         }
     }
@@ -30,33 +31,42 @@ const HeaderWrapper = styled.div`
 class Countries extends Component {
     displayCountries(){
         var data = this.props.data;
+        console.log(data);
         if(data.loading){
             return(<div>loading</div>);
         }else{
-            return data.countries.map(countrey =>{
-                return(
-                        <Collapse
-                            bordered={false}
-                            defaultActiveKey={['AD']}
-                            expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />}
-                        >
-                            <Panel header={countrey.name} key={countrey.code}>
-                            <h5>{countrey.languages.name}</h5><br />
-                            <h5>{countrey.languages.native}</h5><br />
-                            <h5>{countrey.continent.name}</h5><br />
-                            </Panel>
-                        </Collapse>
-                );
-            })
+            return (
+                <div>
+                    {data.country.code}
+                    {data.country.name}
+                    {data.country.continent.name}
+                    {data.country.code}
+                </div>
+            );
+            // // return data.country.map(singleCountry =>{
+            //     return(
+            //             // <Collapse
+            //             //     bordered={false}
+            //             //     defaultActiveKey={['AD']}
+            //             //     expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />}
+            //             // >
+            //             //     <Panel header={data.Country.name} key={data.Country.code}>
+            //             //     <h5>{data.Country.languages.name}</h5><br />
+            //             //     <h5>{data.Country.languages.native}</h5><br />
+            //             //     <h5>{data.Country.continent.name}</h5><br />
+            //             //     </Panel>
+            //             // </Collapse>
+            //     );
+            // // })
         }
     }
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <HeaderWrapper>
-                <ul>
+                <div>
                     {this.displayCountries()}
-                </ul>
+                </div>
             </HeaderWrapper>
         );
     }
