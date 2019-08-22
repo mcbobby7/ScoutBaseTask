@@ -3,8 +3,7 @@ import { Route } from 'react-router-dom';
 import App from '../components/App/conponents/App';
 import Home from '../components/Home/components/home';
 import Countries from '../components/Countries/components/countries';
-import Countrey from '../components/Countrey/components/countrey';
-import Posts from '../components/Posts';
+import Country from '../components/Countrey/components/country';
 
 class ReactRouter extends React.Component {
     render() {
@@ -12,9 +11,8 @@ class ReactRouter extends React.Component {
             <React.Fragment>
                 <App>
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/posts" component={Posts} />
                     <Route exact path="/countries" component={Countries} />
-                    <Route exact path="/country/:code" component={Countrey} />
+                    <Route exact path="/country/:code" component={Country} />
                 </App>
             </React.Fragment>
         );

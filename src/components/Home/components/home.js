@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { gql } from 'apollo-boost';
-import {graphql} from 'react-apollo';
+import { graphql } from 'react-apollo';
 
-const getCountries=gql`
+const getCountries = gql`
     {
-        countries{
+        countries {
             name
             code
-          continent {
-            name
-          }
-          languages {
-            name
-            native
-          }
+            continent {
+                name
+            }
+            languages {
+                name
+                native
+            }
         }
     }
-`
+`;
 
 const HeaderWrapper = styled.div`
     h2 {
@@ -37,5 +37,3 @@ class Countries extends Component {
 }
 
 export default graphql(getCountries)(Countries);
-
-

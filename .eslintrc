@@ -42,7 +42,6 @@
       ],
       "eol-last": ["error", "always"],
       "no-param-reassign": ["warn"],
-      "arrow-body-style": ["error", "as-needed"],
       "arrow-parens": [
         "warn",
         "as-needed",

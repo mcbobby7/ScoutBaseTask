@@ -6,6 +6,7 @@ import Body from './body';
 import Footer from './footer';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+import GlobalStyles from '../../../globalStyles';
 
 const apolloClient = new ApolloClient({
     uri: 'https://countries.trevorblades.com'
@@ -43,6 +44,7 @@ class App extends Component {
                     </AppLayout>
                     <Footer />
                 </Layout>
+                <GlobalStyles />
             </ApolloProvider>
         );
     }
