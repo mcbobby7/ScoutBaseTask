@@ -12,7 +12,7 @@ class ReactRouter extends React.Component {
                 <App>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/countries" component={Countries} />
-                    <Route exact path="/country/:code" component={Country} />
+                    <Route exact path="/countries/:code" component={Country} />
                 </App>
             </React.Fragment>
         );
