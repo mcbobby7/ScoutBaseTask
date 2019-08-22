@@ -59,7 +59,7 @@ class Countries extends Component {
                             <h4>Continent <b>:  {countrey.continent.name}</b></h4>
                             <h4>Language <b>:  {countrey.languages.name}</b></h4>
                             <h4>Native <b>:  {countrey.languages.native}</b></h4>
-                            <Link to={`/country/${countrey.code}`}><p>view this country</p></Link>
+                            <Link to={`/countries/${countrey.code}`}><p>view this country</p></Link>
                         </Panel>
                     </Collapse>
                     </Reveal>
