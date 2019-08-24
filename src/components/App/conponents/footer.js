@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
-    background-color: #08105b;
+    background-color: #022140;
     color: white;
     font-size: 10px;
     margin: 0;

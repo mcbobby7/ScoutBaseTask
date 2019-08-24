@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Zoom from 'react-reveal/Zoom';
 
 const HeaderWrapper = styled.div`
-    background-color: #08105b;
-    font-size: 1em;
+    background-color: #022140;
+    font-size: 80%;
     margin: 0;
     padding: 0.25em 1em;
     text-align: center;

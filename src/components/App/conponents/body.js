@@ -4,7 +4,7 @@ import Flip from 'react-reveal/Flip';
 import Slide from 'react-reveal/Slide';
 import 'antd/dist/antd.css';
 import { Button } from 'antd';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const BodyWrapper = styled.div`
     margin: 0;
@@ -13,8 +13,9 @@ const BodyWrapper = styled.div`
     img {
         padding-top: 30px;
         padding-bottom: 60px;
+        width: 80%;
     }
-    h3{
+    h3 {
         padding: 20px;
     }
     b {
@@ -33,7 +34,7 @@ const BodyWrapper = styled.div`
         width: 200px;
         height: 200px;
     }
-    Button {
+    button {
         margin: 15px;
     }
 `;
@@ -43,13 +44,15 @@ class Body extends Component {
         return (
             <BodyWrapper>
                 <Flip left>
-                    <img src="/scoutbase-logo.png" alt="logo" />
+                    <Link to="/">
+                        <img src="/scoutbase-logo.png" alt="logo" />
+                    </Link>
                 </Flip>
                 <div>
-                    <Slide right>
+                    <Slide left>
                         <h3>
-                            This is my first project for <b> Scout Base </b> and i hope to be called for
-                            interview
+                            This is my first project for <b> Scout Base </b> and i hope to be called
+                            for interview
                         </h3>
                         <h2>
                             <b>Guide</b>
@@ -60,10 +63,11 @@ class Body extends Component {
                             </li>
                             <li>
                                 <p>
-                                    To view a single country  navigate to all countries and click view this country
+                                    To view a single country navigate to all countries and click
+                                    view this country
                                 </p>
                             </li>
-                            
+
                             <li>
                                 <p>
                                     you can navigate to contact us and about the developer from the
@@ -73,7 +77,8 @@ class Body extends Component {
                         </ol>
                     </Slide>
                 </div>
-                <Link to="/countries"><Button className="button" type="primary">
+                <Link to="/countries">
+                    <Button className="button" type="primary">
                         View All Countries
                     </Button>
                 </Link>

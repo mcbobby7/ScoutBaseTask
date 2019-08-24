@@ -9,7 +9,7 @@ import { ApolloProvider } from 'react-apollo';
 import GlobalStyles from '../../../globalStyles';
 
 const apolloClient = new ApolloClient({
-    uri: 'https://countries.trevorblades.com'
+    uri: 'https://countries.trevorblades.com',
 });
 
 const { Content } = Layout;
@@ -24,9 +24,9 @@ const ResultWrapper = styled.div`
     text-align: center;
     width: 600px;
     height: 640px;
-    border: 4px solid #08105b;
-    overflow-x: hidden; 
-    overflow-x: auto; 
+    border: 10px solid #022140;
+    overflow-x: hidden;
+    overflow-x: auto;
 `;
 
 class App extends Component {
