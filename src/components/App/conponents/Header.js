@@ -6,7 +6,7 @@ const HeaderWrapper = styled.div`
     background-color: #022140;
     font-size: 80%;
     margin: 0;
-    padding: 0.25em 1em;
+    padding: 15px;
     text-align: center;
     h1 {
         color: white;

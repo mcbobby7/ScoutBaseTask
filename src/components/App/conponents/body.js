@@ -35,7 +35,7 @@ const BodyWrapper = styled.div`
         height: 200px;
     }
     button {
-        margin: 15px;
+        margin: 35px;
     }
 `;
 
@@ -51,8 +51,8 @@ class Body extends Component {
                 <div>
                     <Slide left>
                         <h3>
-                            This is my first project for <b> Scout Base </b> and i hope to be called
-                            for interview
+                            This is my first project for <b> Scout Base </b> and I hope to be called
+                            for an interview
                         </h3>
                         <h2>
                             <b>Guide</b>
@@ -69,10 +69,7 @@ class Body extends Component {
                             </li>
 
                             <li>
-                                <p>
-                                    you can navigate to contact us and about the developer from the
-                                    result section.
-                                </p>
+                                <p>To navigate to back to home page click the image above</p>
                             </li>
                         </ol>
                     </Slide>

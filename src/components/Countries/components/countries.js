@@ -14,8 +14,10 @@ const getCountries = gql`
         countries {
             name
             code
-            phone
-            currency
+            languages {
+                name
+                native
+            }
             continent {
                 name
             }
@@ -64,12 +66,18 @@ class Countries extends Component {
                                 <h4>
                                     Continent <b>: {countrey.continent.name}</b>
                                 </h4>
-                                <h4>
-                                    Phone <b>: {countrey.phone}</b>
-                                </h4>
-                                <h4>
-                                    Currency <b>: {countrey.currency}</b>
-                                </h4>
+                                {countrey.languages.map(language => {
+                                    return (
+                                        <div>
+                                            <h4>
+                                                Language <b>: {language.name}</b>
+                                            </h4>
+                                            <h4>
+                                                Native <b>: {language.native}</b>
+                                            </h4>
+                                        </div>
+                                    );
+                                })}
                                 <Link to={`/countries/${countrey.code}`}>
                                     <p>view this country</p>
                                 </Link>
@@ -81,7 +89,6 @@ class Countries extends Component {
         }
     }
     render() {
-        console.log(this.props);
         return <HeaderWrapper>{this.displayCountries()}</HeaderWrapper>;
     }
 }

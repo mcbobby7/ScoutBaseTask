@@ -11,10 +11,8 @@ const reposQuery = gql`
         country(code: $id) {
             name
             code
-            languages {
-                name
-                native
-            }
+            phone
+            currency
         }
     }
 `;
@@ -67,10 +65,10 @@ class Post extends Component {
                                             <b>Country</b>: {data.country.name}
                                         </h1>
                                         <h1>
-                                            <b>Language</b>: {data.country.languages[0].name}
+                                            <b>Phone</b>: {data.country.phone}
                                         </h1>
                                         <h1>
-                                            <b>Native</b>: {data.country.languages[0].native}
+                                            <b>Currency</b>: {data.country.currency}
                                         </h1>
                                     </div>
                                 </Jello>
